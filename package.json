@@ -1,6 +1,6 @@
 {
   "name": "@typeforged/claude-plugin-marketplaces",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "license": "MIT",
   "author": {
     "name": "Fluttershy",
@@ -13,16 +13,16 @@
   },
   "type": "module",
   "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js"
+    "./v1": {
+      "types": "./dist/v1/index.d.ts",
+      "import": "./dist/v1/index.js"
     }
   },
   "scripts": {
     "build": "tsc -b",
     "test": "node --test --import tsx src/**/*.test.ts",
-    "gen:plugin": "node scripts/generate.mjs https://json.schemastore.org/claude-code-plugin-manifest.json src/generated/plugin.schema.ts",
-    "gen:marketplace": "node scripts/generate.mjs https://json.schemastore.org/claude-code-marketplace.json src/generated/marketplace.schema.ts"
+    "gen:plugin": "node scripts/generate.mjs https://json.schemastore.org/claude-code-plugin-manifest.json src/v1/plugin.schema.ts",
+    "gen:marketplace": "node scripts/generate.mjs https://json.schemastore.org/claude-code-marketplace.json src/v1/marketplace.schema.ts"
   },
   "dependencies": {
     "zod": "4.4.3"
