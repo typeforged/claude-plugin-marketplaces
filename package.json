@@ -1,0 +1,43 @@
+{
+  "name": "@typeforged/claude-plugin-marketplaces",
+  "version": "0.0.2",
+  "license": "MIT",
+  "author": {
+    "name": "Fluttershy",
+    "url": "https://github.com/Fluttershy"
+  },
+  "description": "Types for marketplace.json and plugin.json. Generated from https://www.schemastore.org/claude-code-marketplace.json and https://json.schemastore.org/claude-code-plugin-manifest.json.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/typeforged/claude-plugin-marketplaces.git"
+  },
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc -b",
+    "test": "node --test --import tsx src/**/*.test.ts",
+    "gen:plugin": "node scripts/generate.mjs https://json.schemastore.org/claude-code-plugin-manifest.json src/generated/plugin.schema.ts",
+    "gen:marketplace": "node scripts/generate.mjs https://json.schemastore.org/claude-code-marketplace.json src/generated/marketplace.schema.ts"
+  },
+  "dependencies": {
+    "zod": "4.4.3"
+  },
+  "devDependencies": {
+    "@types/node": "25.9.3",
+    "typescript": "^5.8.0",
+    "tsx": "4.22.4",
+    "json-schema-to-zod": "2.8.1"
+  },
+  "allowScripts": {
+    "esbuild": true,
+    "fsevents": true
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
