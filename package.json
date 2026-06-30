@@ -1,6 +1,6 @@
 {
   "name": "@typeforged/claude-plugin-marketplaces",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "MIT",
   "author": {
     "name": "Fluttershy",
@@ -18,6 +18,11 @@
       "import": "./dist/v1/index.js"
     }
   },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
     "build": "tsc -b",
     "test": "node --test --import tsx src/**/*.test.ts",
